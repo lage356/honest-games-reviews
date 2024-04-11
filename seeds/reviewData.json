@@ -1,0 +1,41 @@
+[
+  {
+    "game_title": "Halo",
+    "content": "In the end, its hard not to love Halo Infinite, which is easily the most complete game in a franchise thats long set the bar for gaming. There is just nothing like playing through an adventure as the Master Chief.",
+    "rating": 1
+  },
+  {
+    "game_title": "Gears of war",
+    "content": "A great game, for me it falls a bit short, the story leaves you like... what the hell... however, it's worth it. I don't give it the maximum score only because of the duration and the story which is very wtf... however, the gameplay, graphics, and sound are always a 10 out of 10... if you like the saga, it's ideal for you, and if you're just starting out, it also works perfectly since they tell you things from the past.",
+    "rating": 3
+  },
+  {
+    "game_title": "Mario Party",
+    "content": "The best game in the Mario Party franchise with many great details such as the fact that the characters will dress up according to the theme of the stage, the implementation of items to use on the stage, and spaces with battle mini-games; this was the best.",
+    "rating": 5
+  },{
+    "game_title": "The Legend of Zelda: Breath of the Wild",
+    "content": "Breath of the Wild redefines what an open-world game can be. Its vast, immersive world is filled with mysteries to uncover and adventures to embark on. The freedom to explore and tackle challenges in any order makes every playthrough unique.",
+    "rating": 5
+  },
+  {
+    "game_title": "Uncharted",
+    "content": "Uncharted series never fails to deliver high-octane action and cinematic storytelling. Each installment takes players on a thrilling journey filled with memorable characters, breathtaking set pieces, and heart-pounding moments. A must-play for fans of adventure games.",
+    "rating": 4
+  },
+  {
+    "game_title": "The Witcher",
+    "content": "The Witcher series combines deep storytelling, rich world-building, and engaging gameplay to create an unforgettable experience. Whether you're slaying monsters, navigating political intrigue, or forging alliances, every decision feels meaningful and impacts the world around you.",
+    "rating": 5
+  },
+  {
+    "game_title": "Assassin's Creed",
+    "content": "Assassin's Creed is a series known for its historical settings, compelling narratives, and innovative gameplay mechanics. Whether you're exploring ancient Egypt or navigating the streets of Renaissance Italy, each installment offers a rich and immersive experience.",
+    "rating": 4
+  },
+  {
+    "game_title": "Metal Gear Solid",
+    "content": "Metal Gear Solid revolutionized the stealth genre with its intricate storytelling, complex characters, and innovative gameplay mechanics. Hideo Kojima's vision shines through in every aspect of the series, making it a landmark in video game history.",
+    "rating": 5
+  }
+]
