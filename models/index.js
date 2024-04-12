@@ -13,8 +13,15 @@ Comment.belongsTo(User, {
 });
 
 Comment.belongsTo(Review, {
-    foreignKey: 'user_id',
+    foreignKey: 'review_id',
     onDelete: 'CASCADE' 
 });
+
+
+//* PROBAR EN MODELO
+// Review.hasMany(Comment,{
+//     foreignKey:'review_id',
+//     onDelete:'CASCADE'
+// })
 
 module.exports = { User, Review, Comment};
