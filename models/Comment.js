@@ -10,7 +10,27 @@ Comment.init(
             allowNull: false,
             autoIncrement: true,
         },
-        
+        content: {
+            type: DataTypes.STRING,
+            allowNull:false,
+        },
+        // Links the id of the user that makes the comment.
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
+        review_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'review',
+                key:'id'
+            }
+        } 
     },
     {
         sequelize,
