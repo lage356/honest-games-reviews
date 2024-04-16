@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 
     const reviews = review.map((rev) => rev.get({ plain: true }));
 
-    res.render("homepage", {
+    res.render("home", {
       reviews,
       // logged_in: req.session.logged_in,
     });
