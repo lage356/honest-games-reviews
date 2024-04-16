@@ -1,5 +1,5 @@
 // TODO: Add a comment indicating how this file fits into the MVC framework 
-//TODO (is it a Model, a View, or a Controller?) and what it is responsible for handling.
+// TODO (is it a Model, a View, or a Controller?) and what it is responsible for handling.
 
 // // this is a controller its responsible for handling the homeroute
 // const router = require('express').Router();
@@ -18,6 +18,8 @@ const router = require('express').Router();
 
 // const apiRoutes = require('./api');
 const homeRoutes = require('./homeRoutes');
+
+const exploreRoutes = require('./exploreRoutes');
 
 router.use('/', homeRoutes);
 // router.use('/api', apiRoutes);
