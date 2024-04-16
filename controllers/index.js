@@ -23,6 +23,7 @@ const exploreRoutes = require('./exploreRoutes');
 
 router.use('/', homeRoutes);
 // router.use('/api', apiRoutes);
+router.use('/explore', exploreRoutes);
 
 module.exports = router;
 
