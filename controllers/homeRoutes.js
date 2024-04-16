@@ -6,9 +6,5 @@ router.get('/', async (req, res) => {
     res.render('login');
 });
 
-router.get('/explore', async (req, res) => {
-    res.render('explorareviews');
-});
-
 module.exports = router;
 
