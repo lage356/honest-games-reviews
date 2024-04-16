@@ -10,7 +10,7 @@ const Logout = async () => {
     alert('Failed to log out.'); 
   }
 };
-const LogoutButton = document.querySelector('#logout');
-if (LogoutButton) {
-  LogoutButton.addEventListener('click', Logout);
-}
+document
+  .querySelector('#logout')
+  .addEventListener('click', Logout);
+
