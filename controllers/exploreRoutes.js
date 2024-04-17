@@ -2,30 +2,51 @@ const router = require('express').Router();
 const { Comment, Review, User } = require('../models');
 // Next, we need to add something to Authenticate the loggin before sending routes.
 
+// router.get('/search', async (req, res) => {
+//     try {
+//         const searchQuery = req.query.search || ''; // Retrives the search query from the request parameters.
 
-router.get('/', async (req, res) => {
-    res.render('explorareviews', { sGameQuery: true });
-});
+//         // Query the database for reviews that match the game title.
+//         const reviews = await Review.findAll({
+//             where: {
+//                 game_title: {
+//                     [Op.like]: `%${searchQuery}%` // % Symbol = wildcard before and after the searchQuery.
+//                 }
+//             }
+//         });
 
-router.get('/search', async (req, res) => {
+//         res.render('review', { reviews: reviews });
+//     } catch (error) {
+//         console.error('Error searching reviews:', error);
+//         res.status(500).json({ error: 'Internal server error' });
+//     }
+// });
+
+router.post('/search', async (req, res) => {
     try {
-        const searchQuery = req.query.search || ''; // Retrives the search query from the request parameters.
+        const gameName = req.body.gameName;
+        const rating = req.body.rating;
+        const user = req.body.userl
 
-        // Query the database for reviews that match the game title.
+        // Fetch and filter reviews based on user input.
         const reviews = await Review.findAll({
             where: {
                 game_title: {
-                    [Op.like]: `%${searchQuery}%` // % Symbol = wildcard before and after the searchQuery.
-                }
+                    [Op.like]: `%${game_title}%`
+                },
             }
         });
-
-        res.render('review', { reviews: reviews });
+        res.render('explorareviews', { sGameQuery: true, reviews: reviews });
     } catch (error) {
         console.error('Error searching reviews:', error);
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(500).json({ error: 'Internal server error'})
     }
 });
+
+router.get('/', async (req, res) => {
+    res.render('explorareviews', { sGameQuery: false });
+});
+
 
 
 

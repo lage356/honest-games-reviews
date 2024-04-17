@@ -13,6 +13,21 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({});
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Set up session middleware
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use (session(sess));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // app.use(session(sess));
 
 // Inform Express.js on which template engine to use
