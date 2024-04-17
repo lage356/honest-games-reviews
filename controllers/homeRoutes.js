@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Review, Comment } = require("../models");
-// const withAuth = require("../utils/auth");
+
 
 router.get("/", async (req, res) => {
   // controlling the main endpoint
@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["email","name"],
+          attributes: ["email", "name"],
         },
       ],
     });
@@ -17,6 +17,31 @@ router.get("/", async (req, res) => {
     const reviews = review.map((rev) => rev.get({ plain: true }));
 
     res.render("home", {
+      reviews,
+      logged_in: req.session.logged_in,
+    });
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+router.get("/review/:id", async (req, res) => {
+  try {
+    const review = await Review.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comment,
+        },
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const reviews = review.get({ plain: true });
+    console.log(reviews);
+    res.render("singleReview", {
       reviews,
       logged_in: req.session.logged_in,
     });
