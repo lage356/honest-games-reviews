@@ -13,7 +13,19 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({});
 
-// app.use(session(sess));
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {
+      maxAge: 24 * 60 * 60 * 1000,
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+      db: sequelize
+  })
+};
+
+app.use(session(sess));
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
