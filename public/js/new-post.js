@@ -1,20 +1,21 @@
 const newPostFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('#title-new-post').value.trim();
-  const content = document.querySelector('#content-new-post').value.trim();
+  const game_title = document.querySelector('#gameTitle').value.trim();
+  const content = document.querySelector('#reviewContent').value.trim();
+  const rating = document.querySelector('#rating').value.trim();
 
-  if (title && content) {
-    const response = await fetch('/api/posts', {
+  if (game_title && content) {
+    const response = await fetch('/api/reviews', {
       method: 'POST',
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ game_title, content, rating }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard'); 
+      document.location.replace('/'); 
     } else {
-      alert('Failed to create a new post.'); 
+      alert('Failed to create a new review.'); 
     }
   }
 };

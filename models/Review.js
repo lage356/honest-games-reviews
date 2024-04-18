@@ -21,7 +21,7 @@ Review.init(
         },
         rating: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 min: 0,
                 max: 5
