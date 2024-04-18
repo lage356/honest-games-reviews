@@ -1,25 +1,27 @@
-const reviewFinder = async (event) => {
-    event.preventDefault();
+// const reviewFinder = async (event) => {
+//     event.preventDefault();
 
-    const videoGameName = document.querySelector('#gameName').value.trim();
-    const videoGameRating = document.querySelector('#rating').value.trim();
+//     const videoGameName = document.querySelector('#gameName').value.trim();
+//     const videoGameRating = document.querySelector('#rating').value.trim();
 
-    if ( videoGameName && videoGameRating) {
+//     if ( videoGameName && videoGameRating) {
 
-        const response = await fetch ('/api/exploreApi', {
-            method: 'POST',
-            body: JSON.stringify({ videoGameName, videoGameRating }),
-            headers: {'Content-Type': 'application/json'},
-        });
-        if(response.ok) {
-            document.location.replace('/');
-        } else {
-            alert(response.statusText);
-        }
-    }
-};
+//         const response = await fetch ('/api/exploreApi', {
+//             method: 'POST',
+//             body: JSON.stringify({ videoGameName, videoGameRating }),
+//             headers: {'Content-Type': 'application/json'},
+//         });
+//         if(response.ok) {
+//             document.location.replace('/');
+//         } else {
+//             alert(response.statusText);
+//         }
+//     }
+// };
 
-document.querySelector('#SearchForm').addEventListener('submit', reviewFinder)
+// document
+//     .querySelector('#SearchForm')
+//     .addEventListener('submit', reviewFinder);
 
 
 
@@ -31,26 +33,35 @@ document.querySelector('#SearchForm').addEventListener('submit', reviewFinder)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // const { response } = require("express");
 
-//    const rating = document.getElementById('rating').value;
-//    const user = document.getElementById('user').value;
+   const rating = document.getElementById('rating').value;
+   const user = document.getElementById('user').value;
 
-// document.addEventListener('DOMContentLoaded', function() {
-//    document.getElementById('searchForm').addEventListener('submit', function(event) {
-//     event.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+   document.getElementById('SearchForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-//     // Gets the name entered by the user
-//     const gameName = document.getElementById('gameName').value;
+    // Gets the name entered by the user
+    
+    const gameName = document.getElementById('gameName').value;
 
-//     fetch(`/api/reviews?game_title=${gameName}`)
-//         .then(response => response.json())
-//         .then(reviews => {
-//             console.log(reviews);
-//         })
-//         .catch(error => {
-//             console.error('Error:', error);
-//         });
-//     });
-// });
+    fetch(`/api/reviews?game_title=${gameName}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(reviews => {
+        console.log(reviews);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+    });
+});
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //    const filteredReviews = filterReviews(gameName, rating, user);
@@ -59,7 +70,7 @@ document.querySelector('#SearchForm').addEventListener('submit', reviewFinder)
 
 //    const template = Handlebars.compile(document.getElementById('reviewPartialTemplate').innerHTML);
 //    document.body.innerHTML += template({ sGameQuery, reviews: filteredReviews });
-// });
+
 
 // async function fetchReviews() {
 //     const response = await fetch('reviewData.json');
