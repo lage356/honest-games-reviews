@@ -1,0 +1,4 @@
+#uploadedImage:hover {
+    opacity: 0.7; /* Reducción de la opacidad al 70% */
+    cursor: pointer; /* Cambio del cursor a mano */
+  }

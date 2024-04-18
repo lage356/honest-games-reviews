@@ -1,7 +1,6 @@
 const newCommentFormHandler = async (event) => {
   event.preventDefault();
 
-  //const post_id = parseInt(window.location.pathname.split('/').pop());
 
   const content = document.querySelector('#commentContent').value.trim();
 
