@@ -5,6 +5,8 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
+const reviewsRouter = require('./routes/reviews'); // IMPORTS REVIEWS ROUTER
+
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -36,6 +38,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+
+
+app.use('/api', reviewsRouter); // MOUNT THE ROUTER AR 'API/REVIEWS'
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));

@@ -34,11 +34,11 @@ class User extends Model {
         validate: {
           len: [6],
         },
-      },
-      avatar:{
-        type:DataTypes.STRING,
-        allowNull:false
       }
+      // avatar:{
+      //   type:DataTypes.STRING,
+      //   allowNull:false
+      // }
     },
     {
       hooks: {
