@@ -1,15 +1,15 @@
-<div>
+<div id="indvReviewBox">
 
-  <h3>{{reviews.game_title}}</h3>
-  <p>{{reviews.content}}</p>
-  <h5>Posted by: {{reviews.user.name}}</h5>
-  <h4>Date posted: {{format_date reviews.createdAt}}</h4>
+  <h3 class="display-4" id="revgame_title">{{reviews.game_title}}</h3>
+  <p id="indvRevContent">{{reviews.content}}</p>
+  <h5 id="indvPostedBy">Posted by: {{reviews.user.username}}</h5>
+  <h4 id="indvDatePosted">Date posted: {{format_date reviews.createdAt}}</h4>
   
 </div>
 
 
 {{#if logged_in}}
-<form class="newcommentform">
+<form class="newcommentform" id="indvCommentBox">
     <div class="card-body mt-3">
       <h3 class="card-title">Comments Section</h3>
       <div class="mb-3">
@@ -26,3 +26,4 @@
 {{/if}}
 
 <script src="/js/new-comment.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
