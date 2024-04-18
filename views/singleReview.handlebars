@@ -8,7 +8,8 @@
 </div>
 
 
-
+{{#if logged_in}}
+<form class="newcommentform">
     <div class="card-body mt-3">
       <h3 class="card-title">Comments Section</h3>
       <div class="mb-3">
@@ -19,3 +20,9 @@
     </div>
   </div>
 </div>
+</form>
+{{else}}
+<h3>Comments</h3>
+{{/if}}
+
+<script src="./js/new-comment.js"></script>
