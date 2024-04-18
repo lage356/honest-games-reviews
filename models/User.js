@@ -35,6 +35,10 @@ class User extends Model {
           len: [6],
         },
       },
+      avatar:{
+        type:DataTypes.STRING,
+        allowNull:false
+      }
     },
     {
       hooks: {
