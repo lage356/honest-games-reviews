@@ -1,30 +1,19 @@
+<main class="container mt-5">
+  <h1 class="mb-4 text-white">Honest Game Reviews!</h1>
+  <div class="row">
 {{#each reviews as |review|}}
-
-<div class="row justify-content-center">
-  <div class="col-md-8">
-    <div class="card">
-      <div class="card-body">
-        <a href="/review/{{review.id}}">
-        <h2 class="card-title text-center">{{review.game_title}}<span id="gameName"></span></h2></a>
-        <div class="row">
-          <div class="col-md-6">
-            <div id="starRating">
-              <!-- Icono de estrella para una calificación de 5 estrellas -->
-              <span class="fas fa-star" id="star1"></span>
-              <span class="fas fa-star" id="star2"></span>
-              <span class="fas fa-star" id="star3"></span>
-              <span class="fas fa-star" id="star4"></span>
-              <span class="fas fa-star" id="star5"></span>
-            </div>
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="card-header bg-warning">
+            <h2 class="card-title">
+              <a href="/review/{{review.id}}" class="text-dark">{{review.game_title}}</a>
+            </h2>
           </div>
-          <div class="col-md-6">
-            <p>Date: {{format_date review.createdAt}} <span id="reviewDate"></span></p>
-          </div>
-          <div class="col-md-6">
-            <p>Review by {{review.user.username}} <span id="reviewer"></span></p>
+          <div class="card-body text-dark">
+            <p>Created by: {{user.username}} Date: {{format_date createdAt}}</p>
           </div>
         </div>
       </div>
-    </div>
-
 {{/each}}
+ </div>
+ </main>
