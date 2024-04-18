@@ -47,6 +47,19 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
+router.get('/', async (req, res) => {
+    try {
+        // Fetch all reviews from the database
+        const reviews = await Review.findAll();
+
+        // Respond with the fetched reviews
+        res.status(200).json(reviews);
+    } catch (error) {
+        console.error('Error fetching reviews:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 
 
 module.exports = router;
