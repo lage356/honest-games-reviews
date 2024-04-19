@@ -17,25 +17,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post('/comments', async (req, res)=>{
-  try {
-    const comentaData = await Comment.findAll({
-      include: [
-        {
-          model: comment,
-          attributes: ["content", "review_id"],
-        },
-      ],
-    });
-    const comentarios = comentaData.map((rev) => rev.get({ plain: true }));
 
-    res.render("singleReview", {
-      comentarios,
-      logged_in: req.session.logged_in,
-    });
-  } catch (error) {
-    res.status(500).json(error);
-  }
-})
 
 module.exports = router;

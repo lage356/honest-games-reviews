@@ -21,7 +21,10 @@
   </div>
 </div>
 </form>
-<h2>{{reviews.comment.content}}</h2>
+{{#each reviews as |review|}}
+
+<h2>{{review.comments.content}}</h2>
+{{/each}}
 {{else}}
 <h3>Comments</h3>
 {{/if}}

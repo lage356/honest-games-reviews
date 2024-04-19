@@ -38,7 +38,8 @@ router.get("/review/:id", async (req, res) => {
           attributes: ["username"],
         },
       ],
-    });
+      });
+
     
     const reviews = review.get({ plain: true });
     console.log(reviews);
