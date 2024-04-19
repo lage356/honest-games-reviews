@@ -31,6 +31,7 @@ router.get("/review/:id", async (req, res) => {
       include: [
         {
           model: Comment,
+          attributes: ["content"],
         },
         {
           model: User,
@@ -38,7 +39,7 @@ router.get("/review/:id", async (req, res) => {
         },
       ],
     });
-
+    
     const reviews = review.get({ plain: true });
     console.log(reviews);
     res.render("singleReview", {
@@ -49,6 +50,7 @@ router.get("/review/:id", async (req, res) => {
     res.status(500).json(error);
   }
 });
+
 
 router.get("/review", (req, res) => {
   // If the user is already logged in, redirect the request to another route

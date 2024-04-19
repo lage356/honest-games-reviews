@@ -15,6 +15,7 @@ To create this project, we used several diferent dependencies to manage differen
 - **handlebars** - Templating engine to create dynamic HTML.
 - **mysql2** - Allows Node.js to interact with MySQL.
 - **sequelize** - *ORM* for Node.js, to intecract with database using JS objects.
+- **Cloudinary** - To add profile picture to users
 
 ## How to run this application
 To run this app., the user just needs to open and follow the
