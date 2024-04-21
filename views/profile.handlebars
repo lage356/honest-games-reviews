@@ -10,7 +10,7 @@
     <div class="col-md-6 offset-md-3">
       <h2 class="text-center">Profile</h2>
       <!-- Ahora la imagen tiene un atributo onclick que llama a la función seleccionarImagen() -->
-      <img id="uploadedImage" class="img-fluid rounded mx-auto d-block mt-3" width="150" height="150" src="/images.jpeg" onclick="seleccionarImagen()" />
+      <img id="uploadedImage" class="img-fluid rounded mx-auto d-block mt-3" width="150" height="150" onclick="seleccionarImagen()" />
       <!-- Utiliza tu imagen de marcador de posición o deja src="" para ninguna imagen predeterminada -->
     </div>
   </div>
@@ -37,10 +37,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="successModalLabel">¡Foto Guardada!</h5>
+        <h5 class="modal-title" id="successModalLabel" style="color: black;">¡Foto Guardada!</h5> <!-- Texto en negro -->
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="color: black;"> <!-- Texto en negro -->
         La foto se ha guardado correctamente.
       </div>
       <div class="modal-footer">
@@ -50,4 +50,5 @@
   </div>
 </div>
 
-<script src="/js/uploadPhoto.js"></script>
+</body>
+<script src="/js/upload-photo.js"></script>

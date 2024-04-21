@@ -1,6 +1,7 @@
 const User = require('./User');
 const Review = require('./Review');
 const Comment = require('./Comment');
+const Avatar = require('./Avatar');
 
 Review.belongsTo(User, {
     foreignKey: 'user_id',
@@ -17,6 +18,10 @@ Review.hasMany(Comment,{
     onDelete:'CASCADE'
 });
 
+Avatar.belongsTo(Avatar,{
+    foreignKey:'avatar_id',
+});
+
 
 //* PROBAR EN MODELO
 // Review.hasMany(Comment,{
@@ -24,4 +29,4 @@ Review.hasMany(Comment,{
 //     onDelete:'CASCADE'
 // })
 
-module.exports = { User, Review, Comment};
+module.exports = { User, Review, Comment, Avatar};
