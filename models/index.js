@@ -3,7 +3,6 @@ const Review = require('./Review');
 const Comment = require('./Comment');
 const Avatar = require('./Avatar');
 
-
 Review.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE' 
@@ -29,16 +28,14 @@ User.hasMany(Comment,{
     onDelete:'CASCADE'
 });
 
-Avatar.belongsTo(Avatar,{
-    foreignKey:'avatar_id',
+Avatar.belongsTo(User, { 
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE' 
 });
 
-
-User.belongsTo(User, {
+User.belongsTo(Avatar, {
     foreignKey: 'avatar_id',
     onDelete: 'CASCADE' 
 });
 
-
-
-module.exports = { User, Review, Comment};
+module.exports = { User, Review, Comment, Avatar};
