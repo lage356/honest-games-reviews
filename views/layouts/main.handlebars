@@ -16,6 +16,25 @@
     height: 150px;
     object-fit: cover;
   }
+   .ratingStars::before {
+    content: "★★★★★";
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #ffc107 calc(var(--rating) / 5 * 100%), #e4e5e9 calc(var(--rating) / 5 * 100%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card-header, .card-body {
+    background-color: #ffffff; /* Slightly lighter shade for card */
+}
+.card-title a {
+    color: #FFD700; /* Gold color for game titles */
+    text-decoration: none;
+}
+.card-title a:hover {
+    color: #FFC107;
+    text-decoration: underline;
+}
+
 </style>
 </head>
 
