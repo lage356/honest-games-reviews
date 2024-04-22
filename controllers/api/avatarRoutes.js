@@ -18,6 +18,7 @@ router.post("/upload", upload.single("file"), async (req, res) => {
       name_file: req.file.originalname,
       url_file: imageUrl,
       user_id: userId,
+      avatar_id: userId,
     });
     res.json({ imageUrl });
     console.log(imageUrl);

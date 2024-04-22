@@ -56,8 +56,5 @@ class User extends Model {
     }
   );
 
-  User.hasMany(Avatar, {
-    foreignKey: 'user_id',
-  });
   
   module.exports = User;

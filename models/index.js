@@ -33,7 +33,7 @@ Avatar.belongsTo(User, {
     onDelete: 'CASCADE' 
 });
 
-User.belongsTo(Avatar, {
+User.hasOne(Avatar, {
     foreignKey: 'avatar_id',
     onDelete: 'CASCADE' 
 });
