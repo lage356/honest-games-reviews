@@ -15,6 +15,22 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+          model: 'user',
+          key: 'id',
+      },
+  },
+    review_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'review',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
@@ -24,5 +40,6 @@ Comment.init(
     modelName: "comment",
   }
 );
+
 
 module.exports = Comment;

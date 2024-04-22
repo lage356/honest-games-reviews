@@ -13,10 +13,22 @@ User.hasMany(Review,{
     onDelete:'CASCADE'
 })
 
+// Comment.belongsTo(User, {
+//     foreignKey: 'review_id',
+//     onDelete: 'CASCADE' 
+// });
+
+///////////////////////////////
 Comment.belongsTo(User, {
-    foreignKey: 'review_id',
+    foreignKey: 'user_id',
     onDelete: 'CASCADE' 
 });
+
+Comment.belongsTo(Review, {
+    foreignKey: 'review_id',
+    onDelete: 'CASCADE'
+  });
+/////////////////////////////////
 
 User.hasMany(Comment,{
     foreignKey:'user_id',
