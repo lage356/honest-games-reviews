@@ -35,8 +35,9 @@ Avatar.belongsTo(User, {
 });
 
 User.hasOne(Avatar, {
-    foreignKey: 'avatar_id',
+    foreignKey: 'user_id',
     onDelete: 'CASCADE' 
 });
 
 module.exports = { User, Review, Comment, Avatar};
+

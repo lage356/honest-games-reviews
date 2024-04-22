@@ -8,6 +8,7 @@ const withAuth = require("../../utils/auth.js");
 // POST route to handle new review submissions
 router.post('/', withAuth, async (req, res) => {
     try {
+        const userID = req.session.user_id;
         // Parse data from the request body
         const { game_title, content, rating } = req.body;
 
@@ -15,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
             game_title,
             content,
             rating,
+            user_id: userID
         });
 
         // Respond with the created review

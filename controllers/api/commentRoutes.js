@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Comment } = require('../../models');
+const { Review,Comment } = require('../../models');
 
 router.post("/", async (req, res) => {
   try {
@@ -8,10 +8,11 @@ router.post("/", async (req, res) => {
     // Extract user_id and review_id from the request
     const { review_id, content } = req.body;
 
+    console.log(req.body);
     // Create the comment with the user_id, review_id, and content
     const commentData = await Comment.create({
       user_id: userID,
-      review_id: review_id,
+      review_id: userID,
       content: content,
     });
 
