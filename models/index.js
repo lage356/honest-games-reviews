@@ -18,15 +18,16 @@ Comment.belongsTo(User, {
     onDelete: 'CASCADE' 
 });
 
+User.hasMany(Comment,{
+    foreignKey:'user_id',
+    onDelete:'CASCADE'
+});
+
 Review.hasMany(Comment,{
     foreignKey:'review_id',
     onDelete:'CASCADE'
 });
 
-User.hasMany(Comment,{
-    foreignKey:'user_id',
-    onDelete:'CASCADE'
-});
 
 Avatar.belongsTo(User, { 
     foreignKey: 'user_id',

@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { classToInvokable } = require("sequelize/lib/utils");
 const { User, Review, Comment } = require("../models");
 
 router.get("/", async (req, res) => {
@@ -57,7 +56,7 @@ router.get("/review/:id", async (req, res) => {
     }));
 
 
-  console.log(comments)
+    console.log(comments)
 
     res.render("singleReview", {
       review,

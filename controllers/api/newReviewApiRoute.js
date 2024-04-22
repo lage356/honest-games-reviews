@@ -1,11 +1,12 @@
 const express = require('express');
 const Review = require('../../models/Review');
 const router = express.Router();
+const withAuth = require("../../utils/auth.js");
 
 
 
 // POST route to handle new review submissions
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         // Parse data from the request body
         const { game_title, content, rating } = req.body;
@@ -25,7 +26,7 @@ router.post('/', async (req, res) => {
 });
 
 // Delete route to delete a selected review by its id.
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         // Extract the review id from the request parameters
         const { id } = req.params;
@@ -47,7 +48,7 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-router.get('/', async (req, res) => {
+router.get('/',withAuth, async (req, res) => {
     try {
         // Fetch all reviews from the database
         const reviews = await Review.findAll();

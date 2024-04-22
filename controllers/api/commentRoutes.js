@@ -3,12 +3,14 @@ const { Comment } = require('../../models');
 
 router.post("/", async (req, res) => {
   try {
+
+    const userID = req.session.user_id;
     // Extract user_id and review_id from the request
-    const { user_id, review_id, content } = req.body;
+    const { review_id, content } = req.body;
 
     // Create the comment with the user_id, review_id, and content
     const commentData = await Comment.create({
-      user_id: user_id,
+      user_id: userID,
       review_id: review_id,
       content: content,
     });
