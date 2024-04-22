@@ -1,13 +1,15 @@
 const newCommentFormHandler = async (event) => {
   event.preventDefault();
 
+  const review_id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1];
 
   const content = document.querySelector('#commentContent').value.trim();
 
   if (content) {
     const response = await fetch(`/api/comments`, {
       method: 'POST',
-      body: JSON.stringify({content}),
+      body: JSON.stringify({content,review_id}),
       headers: { 'Content-Type': 'application/json' },
     });
 
