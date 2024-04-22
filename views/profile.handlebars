@@ -1,0 +1,34 @@
+<div class="row mt-5">
+  <div class="col-md-6 offset-md-3">
+    <h2 class="text-center">Profile</h2>
+    <img id="uploadedImage" class="img-fluid rounded mx-auto d-block mt-3" width="150" height="150"
+      onclick="seleccionarImagen()" />
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-md-6 offset-md-3 text-center">
+    <input type="file" class="form-control" id="imageInput" name="image" accept="image/*" style="display: none;"
+      onchange="mostrarVistaPrevia()" />
+    <button type="button" class="btn btn-primary" onclick="subirImagen()">Upload image</button>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark" id="successModalLabel">Saved Photo!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-dark">
+        The photo has been saved successfully.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/uploadPhoto.js"></script>
