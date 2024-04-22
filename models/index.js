@@ -22,6 +22,12 @@ Review.hasMany(Comment,{
     onDelete:'CASCADE'
 });
 
+User.hasMany(Comment,{
+    foreignKey:'user_id',
+    onDelete:'CASCADE'
+});
+
+
 
 
 module.exports = { User, Review, Comment};

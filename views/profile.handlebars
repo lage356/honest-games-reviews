@@ -1,53 +1,11 @@
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cloudinary Image</title>
-</head>
-<body>
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-md-6 offset-md-3">
-      <h2 class="text-center">Profile</h2>
-      <!-- Ahora la imagen tiene un atributo onclick que llama a la función seleccionarImagen() -->
-      <img id="uploadedImage" class="img-fluid rounded mx-auto d-block mt-3" width="150" height="150" src="/images.jpeg" onclick="seleccionarImagen()" />
-      <!-- Utiliza tu imagen de marcador de posición o deja src="" para ninguna imagen predeterminada -->
-    </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-md-6 offset-md-3 text-center">
-      <!-- El input de archivo ahora se encuentra fuera del formulario -->
-      <input
-        type="file"
-        class="form-control"
-        id="imageInput"
-        name="image"
-        accept="image/*"
-        style="display: none;"
-        onchange="mostrarVistaPrevia()"
-      />
-      <!-- Eliminamos el formulario y movemos el botón de carga fuera del formulario -->
-      <button type="button" class="btn btn-primary" onclick="subirImagen()">Upload image</button>
-    </div>
-  </div>
-</div>
 
-<!-- Modal de éxito -->
-<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="successModalLabel">¡Foto Guardada!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        La foto se ha guardado correctamente.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+ <h2>Upload Profile Picture</h2>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" id="fileInput" name="file">
+    <button type="submit">Upload</button>
+  </form>
+  <div id="imagePreview"></div>
+
 
 <script src="/js/uploadPhoto.js"></script>
