@@ -8,11 +8,16 @@ router.post("/", async (req, res) => {
     // Extract user_id and review_id from the request
     const { review_id, content } = req.body;
 
-    console.log(req.body);
+    // Retrieve the review instance based on the provided review_id
+    const review = await Review.findByPk(review_id);
+
+    
+    console.log("-----------------------------------------------------",review);
+
     // Create the comment with the user_id, review_id, and content
     const commentData = await Comment.create({
       user_id: userID,
-      review_id: userID,
+      review_id: 2,
       content: content,
     });
 
