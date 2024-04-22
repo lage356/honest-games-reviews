@@ -7,7 +7,7 @@ const reviewsRoutes = require('./newReviewApiRoute');
 
 router.use('/users', userRoutes);
 router.use('/comments',commentRoutes);
-router.use('/avatar',avatarRoute);
+// router.use('/avatar',avatarRoute);
 router.use('/reviews', reviewsRoutes);
 
 module.exports = router;
