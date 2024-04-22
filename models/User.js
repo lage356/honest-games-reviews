@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const Avatar = require('./Avatar');
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -35,10 +36,6 @@ class User extends Model {
           len: [6],
         },
       }
-      // avatar:{
-      //   type:DataTypes.STRING,
-      //   allowNull:false
-      // }
     },
     {
       hooks: {
@@ -58,5 +55,9 @@ class User extends Model {
       modelName: 'user',
     }
   );
+
+  User.hasMany(Avatar, {
+    foreignKey: 'user_id',
+  });
   
   module.exports = User;

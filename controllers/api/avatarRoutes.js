@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const cloudinary = require("cloudinary").v2;
-const upload = require('/Users/fernandolage/bootcamp/honest-games-reviews/middleware/upload');
+const upload = require('../../middleware/upload');
 
 
 router.post('/upload', upload.single('file'), async (req, res) => {

@@ -9,7 +9,7 @@ const form = document.getElementById('uploadForm');
       formData.append('file', fileInput.files[0]);
 
       try {
-        const response = await fetch('/api/avatar/upload', {
+        const response = await fetch('/api/avatars/upload', {
           method: 'POST',
           body: formData
         });
