@@ -20,7 +20,7 @@ To create this project, we used several diferent dependencies to manage differen
 ## How to run this application
 To run this app., the user just needs to open and follow the
 
- **URL:**
+ **URL:** https://honest-game-reviews-68bc07d84486.herokuapp.com/
 
  ## How to use the project
 Once inside, you can fill the inputs to join and sign up, after creating an account, you will be able to see the diferent Reviews from the users inside 'Home', you can see each *review* just by clicking on the name of the game inside each review card; users can manage their profile by clicking the 'Profile' button on top, and inside every review, users can post a new comment by filling the input and pressing the *send* button.
