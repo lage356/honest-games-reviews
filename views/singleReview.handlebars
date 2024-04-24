@@ -19,10 +19,10 @@
 <h3>Comments</h3>
 {{/if}}
 
-{{#each comments as |comment|}}
+{{#each review.comments as |comment|}}
 <div class="comment-section mt-3">
   <h2>{{comment.content}}</h2>
-  <h5>Comment by: {{comment.username}} Date: {{format_date comment.createdAt}}</h5>
+  <h5>Comment by: {{comment.user.username}} Date: {{format_date comment.createdAt}}</h5>
 </div>
 {{/each}}
 

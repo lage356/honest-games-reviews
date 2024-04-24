@@ -3,13 +3,15 @@ const cloudinary = require("cloudinary").v2;
 const upload = require("../../middleware/upload");
 const Avatar = require("../../models/Avatar");
 
-router.post("/upload", upload.single("file"), async (req, res) => {
+router.post("/upload",  async (req, res) => {
   try {
     if (!req.file) {
       return res.status(400).json({ message: "No file uploaded" });
     }
     const result = await cloudinary.uploader.upload(req.file.path);
+
     const imageUrl = result.secure_url;
+    
     if (!req.session.user_id) {
       return res.status(401).json({ message: "User not authenticated" });
     }

@@ -24,44 +24,27 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 router.get("/review/:id", async (req, res) => {
   try {
     const reviews = await Review.findByPk(req.params.id, {
       include: [
+        User,
         {
           model: Comment,
-          attributes: ["content","createdAt","review_id"],
-          include:[
+          include: [
             {
-              model:User,
-              attributes:["username"],
-            }
+              model: User,
+            },
           ],
-        },
-        {
-          model: User,
-          attributes: ["username"],
         },
       ],
     });
 
     const review = reviews.get({ plain: true });
-    
-
-    const comments =review.comments.map(comment =>({
-      content: comment.content,
-      username:comment.user.username,
-      createdAt:comment.createdAt,
-      review_id:comment.review_id
-    }));
-
-
-    console.log(comments)
+console.log(review);
 
     res.render("singleReview", {
       review,
-      comments,
       logged_in: req.session.logged_in,
     });
   } catch (error) {

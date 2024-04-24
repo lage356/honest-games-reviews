@@ -35,7 +35,10 @@ class User extends Model {
         validate: {
           len: [6],
         },
-      }
+      },
+      // avatar_url: {
+      //   type: DataTypes.STRING
+      // },
     },
     {
       hooks: {

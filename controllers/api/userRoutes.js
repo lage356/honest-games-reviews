@@ -6,11 +6,8 @@ const withAuth = require("../../utils/auth.js");
 router.post('/', async (req, res) => {
   try {
     
-    const userData = await User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-    });
+    const userData = await User.create(req.body);
+
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -19,7 +16,7 @@ router.post('/', async (req, res) => {
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json({message: "hola mundo"});
+    res.status(500).json(err);
   }
 });
 
