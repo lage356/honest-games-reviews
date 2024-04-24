@@ -14,7 +14,7 @@ User.hasMany(Review,{
 })
 
 Comment.belongsTo(User, {
-    foreignKey: 'review_id',
+    foreignKey: 'user_id',
     onDelete: 'CASCADE' 
 });
 
@@ -27,6 +27,11 @@ Review.hasMany(Comment,{
     foreignKey:'review_id',
     onDelete:'CASCADE'
 });
+
+Comment.belongsTo(Review,{
+    foreignKey:'review_id',
+    onDelete: 'CASCADE'
+})
 
 
 Avatar.belongsTo(User, { 

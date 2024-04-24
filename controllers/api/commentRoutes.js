@@ -4,17 +4,17 @@ const { Review,Comment } = require('../../models');
 router.post("/", async (req, res) => {
   try {
 
-    // const userID = req.session.user_id;
-
-    const { review_id, content } = req.body;
-
+   
+    const USERID = req.session.user_id;
+    const { review_id, content,user_id } = req.body;
+    
     // Create the comment with the user_id, review_id, and content
     const commentData = await Comment.create({
-      
       review_id: review_id,
       content: content,
+      user_id: USERID,
     });
-    console.log(req.body);
+    console.log(commentData);
 
     res.status(200).json(commentData);
   } catch (err) {

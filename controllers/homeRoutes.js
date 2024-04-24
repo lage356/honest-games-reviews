@@ -31,7 +31,7 @@ router.get("/review/:id", async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ["content","createdAt"],
+          attributes: ["content","createdAt","review_id"],
           include:[
             {
               model:User,
@@ -52,7 +52,8 @@ router.get("/review/:id", async (req, res) => {
     const comments =review.comments.map(comment =>({
       content: comment.content,
       username:comment.user.username,
-      createdAt:comment.createdAt
+      createdAt:comment.createdAt,
+      review_id:comment.review_id
     }));
 
 
